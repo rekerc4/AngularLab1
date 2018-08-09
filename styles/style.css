@@ -1,0 +1,42 @@
+*{
+    margin: 0px; 
+    padding: 0px; 
+    font-family: 'Open Sans', sans-serif;
+}
+
+html{
+    min-width: 100%; 
+    min-height: 100%;
+}
+
+button, input{
+    border: none; 
+    
+}
+
+body{
+    min-width: 100%; 
+    min-height: 100%;
+}
+
+.container{
+    background: linear-gradient(to right, #f857a6, #ff5858);
+    display: inline-block;
+    min-width: 100%; 
+    min-height: 100%;
+    position: absolute;
+}
+
+.content{
+    width: 80%; 
+    margin: 5% auto 10% auto; 
+    border-radius: 7px; 
+    background: #ffffff; 
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+}
+
+.to-do-form{
+    width: 92%; 
+    margin: 20px auto 25px auto; 
+}
+

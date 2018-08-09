@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="todoApp">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+  </head>
+  <body ng-controller="TodoController as todo">
+      <section class="container" id="container">
+          <section class="content" id="content">
+              <form class="to-do-form" id="tdf">
+                  <h1 class="title" id="title">TODO List</h1>
+                  <span class="blurb" id="blurb">A place to store things you have to do!</span>
+                  <input type="text" class="in filter" id="filter">
+                  <ol class="todos" id="todos">
+                      <li class="todo" ng-repeat="item in todo.arr">
+                        <button type="button" class="completed">Complete</button>
+                        <span ng-class="{'done' : item.completed, 'text' : true}">{{item.text}}</span>
+                        <i class="material-icons" class="remove">close</i>
+                      </li>
+                  </ol> 
+                  <input type="text" class="in enter" id="enter">
+                  <button type="button" class="add" id="add">Add</button>
+              </form>
+          </section>
+      </section>
+
+
+    
+ 
+    <script types="text/javascript" src="https://code.angularjs.org/1.6.5/angular.js"></script>
+    <script type="text/javascript" src="scripts/module.js"></script>
+    <script type="text/javascript" src="scripts/ctrl.js"></script>
+    <script type="text/javascript" src="scripts/script.js"></script>
+  </body>
+  
+  
+  
+  </html>
