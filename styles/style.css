@@ -1,7 +1,7 @@
 *{
     margin: 0px; 
     padding: 0px; 
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans', serif;
 }
 
 html{
@@ -14,9 +14,20 @@ button, input{
     
 }
 
+.in{
+    padding: 16px 0px 16px 3%; 
+    border: 1px solid #bbb;
+    border-radius: 7px; 
+}
+
+ol{
+    list-style-position: inside; 
+}
+
 body{
     min-width: 100%; 
     min-height: 100%;
+    counter-reset: lis;
 }
 
 .container{
@@ -33,10 +44,71 @@ body{
     border-radius: 7px; 
     background: #ffffff; 
     box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    padding: 25px 0px 25px 0px; 
 }
 
 .to-do-form{
     width: 92%; 
     margin: 20px auto 25px auto; 
+    display: flex; 
+    flex-direction: column;
 }
 
+.to-do-form *{
+    margin-bottom: 15px; 
+}
+
+.title{
+    margin-bottom: 10px;
+    font-size: 2em;  
+}
+
+.blurb{
+    font-size: 1.2em; 
+}
+
+.add{
+    padding: 17px 0px 17px 0px; 
+    background: #ff69b4;
+    color: #ffffff;
+    border-radius: 7px; 
+    opacity: 0.5; 
+    font-size: 1.25em;
+}
+
+.add:hover{
+    opacity: 1;
+    background: #ff1493;
+}
+
+.todo{
+    display: flex; 
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.todo::before{
+    counter-increment: lis; 
+    content: counters(lis, ".");
+}
+
+.completed{
+    color: #ff69b4; 
+    border: 1px solid #ff69b4;
+    border-radius: 5px; 
+    padding: 6px 0px 6px 0px; 
+}
+
+.text{
+    margin: 0px 0px 0px 10px; 
+    font-size: 1.25em; 
+}
+
+.dot{
+    margin-right: 12px; 
+}
+
+.remove{
+    justify-self: flex-end;
+    margin: 0px 0px 0px auto; 
+}

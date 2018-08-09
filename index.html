@@ -16,15 +16,16 @@
               <form class="to-do-form" id="tdf">
                   <h1 class="title" id="title">TODO List</h1>
                   <span class="blurb" id="blurb">A place to store things you have to do!</span>
-                  <input type="text" class="in filter" id="filter">
+                  <input type="text" class="in filter" id="filter" placeholder="Filter your to-dos">
                   <ol class="todos" id="todos">
                       <li class="todo" ng-repeat="item in todo.arr">
-                        <button type="button" class="completed">Complete</button>
+                        <span class="dot">.</span>
+                        <button type="button" class="completed" ng-If="!item.completed">Complete</button>
                         <span ng-class="{'done' : item.completed, 'text' : true}">{{item.text}}</span>
-                        <i class="material-icons" class="remove">close</i>
+                        <i class="material-icons remove">close</i>
                       </li>
                   </ol> 
-                  <input type="text" class="in enter" id="enter">
+                  <input type="text" class="in enter" id="enter" placeholder="Add your to do">
                   <button type="button" class="add" id="add">Add</button>
               </form>
           </section>
