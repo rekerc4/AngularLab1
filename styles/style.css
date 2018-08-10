@@ -112,3 +112,7 @@ body{
     justify-self: flex-end;
     margin: 0px 0px 0px auto; 
 }
+
+.done{
+    text-decoration: line-through;
+}
