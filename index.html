@@ -13,20 +13,20 @@
   <body ng-controller="TodoController as todo">
       <section class="container" id="container">
           <section class="content" id="content">
-              <form class="to-do-form" id="tdf">
+              <form ng-submit="todo.addTask({newTask : todo.textInfo});" class="to-do-form" id="tdf">
                   <h1 class="title" id="title">TODO List</h1>
                   <span class="blurb" id="blurb">A place to store things you have to do!</span>
-                  <input type="text" class="in filter" id="filter" placeholder="Filter your to-dos">
+                  <input ng-model="words" type="text" class="in filter" id="filter" placeholder="Filter your to-dos">
                   <ol class="todos" id="todos">
-                      <li class="todo" ng-repeat="item in todo.arr">
+                      <li class="todo" ng-repeat="item in todo.arr | filter: words track by $index">
                         <span class="dot">.</span>
-                        <button type="button" class="completed" ng-If="!item.completed">Complete</button>
+                        <button ng-click="todo.completeTask($index)" type="button" class="completed" ng-If="!item.completed ; ">Complete</button>
                         <span ng-class="{'done' : item.completed, 'text' : true}">{{item.text}}</span>
-                        <i class="material-icons remove">close</i>
+                        <i ng-click="todo.deleteTask($index)" class="material-icons remove">close</i>
                       </li>
                   </ol> 
-                  <input type="text" class="in enter" id="enter" placeholder="Add your to do">
-                  <button type="button" class="add" id="add">Add</button>
+                  <input type="text" ng-model="todo.textInfo.text" class="in enter" id="enter" placeholder="Add your to do">
+                  <button class="add" id="add">Add</button>
               </form>
           </section>
       </section>
